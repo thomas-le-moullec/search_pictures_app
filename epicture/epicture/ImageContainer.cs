@@ -16,7 +16,6 @@ namespace epicture
 
         public ImageContainer()
         {
-            Debug.WriteLine("ON PASSE PAR LE CONSTRUCTEUR");
         }
 
         public void AddImageSource(Image img)
