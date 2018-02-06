@@ -13,6 +13,7 @@
         <TextBox Name="TextBoxTag" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 150, 0, 0" PlaceholderText="rentrez un tag" ></TextBox>
         <TextBox Name="TextBoxNb" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 200, 0, 0" PlaceholderText="nombre de photos" ></TextBox>
         <Button Name="ButtonTag" Content="Rechercher des photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 250, 0, 0" Click="SearchTagClick"/>
+        <Button Name="ButtonOauth" Content="Connection Flickr" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 350, 0, 0" Click="AuthFlickrClick"/>
         <ListView Name="ListViewTag1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, -200, 0"/>
         <ListView Name="ListViewTag2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, 200, 0"/>
 
