@@ -1,4 +1,7 @@
 ﻿using FlickrNet;
+using Imgur.API;
+using Imgur.API.Authentication.Impl;
+using Imgur.API.Endpoints.Impl;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,8 +29,6 @@ namespace epicture
     public sealed partial class MainPage : Page
     {
 
-        const string API_KEY = "ed97463b02210fa18ccfe6a1358267b3";
-
         public MainPage()
         {
             this.InitializeComponent();
@@ -37,32 +38,22 @@ namespace epicture
         {
             Debug.WriteLine("DEBUG : " + TextBoxTag.Text);
 
-            string tag = TextBoxTag.Text;
-            int nb_pages = Int32.Parse(TextBoxNb.Text);
+            string tag = "";
+            int nb_pages = 1;
 
-            Flickr flickr = new Flickr(API_KEY);
-            var options = new PhotoSearchOptions { Tags = tag, PerPage = nb_pages, Page = 1 };
-            PhotoCollection photos = await flickr.PhotosSearchAsync(options);
+            if (TextBoxTag.Text != "")
+                tag = TextBoxTag.Text;
+            if (TextBoxNb.Text != "")
+                nb_pages = Int32.Parse(TextBoxNb.Text);
 
-            ImageContainer imageContainer = new ImageContainer();
-            ImageContainer imageContainer2 = new ImageContainer();
+            ImgurApi imgurApi = new ImgurApi();
+            FlickrApi flickrApi = new FlickrApi();
 
-            foreach (Photo photo in photos)
-            {
-                Debug.WriteLine("Photo {0} has title {1}", photo.PhotoId, photo.Title);
-                Image img = new Image();
-                img.Source = new BitmapImage(new Uri(photo.LargeUrl));
-                Image img_2 = new Image();
-                img_2.Source = new BitmapImage(new Uri(photo.LargeUrl));
-                imageContainer.AddImageSource(img);
-                imageContainer2.AddImageSource(img_2);
-            }
+            ImageContainer imgContainerFlickr = await flickrApi.createImageContainerFromTag(tag, nb_pages);
+            ImageContainer imgContainerImgur = await imgurApi.createImageContainerFromTag(tag);
 
-            ListViewTag1.ItemsSource = imageContainer.GetImages();
-            ListViewTag2.ItemsSource = imageContainer2.GetImages();
-
-            //ListViewTag1.SelectionChanged = Listview1_SelectionChanged;
-
+            ListViewTag1.ItemsSource = imgContainerImgur.GetImages();
+            ListViewTag2.ItemsSource = imgContainerFlickr.GetImages();
         }
     }
 }
