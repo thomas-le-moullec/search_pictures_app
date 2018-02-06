@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="epicture.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:epicture"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <TextBlock Name="TextBlockTag" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 100, 0, 0">EPICTURE</TextBlock>
+        <TextBox Name="TextBoxTag" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 150, 0, 0" PlaceholderText="rentrez un tag" ></TextBox>
+        <TextBox Name="TextBoxNb" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 200, 0, 0" PlaceholderText="nombre de photos" ></TextBox>
+        <Button Name="ButtonTag" Content="Rechercher des photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 250, 0, 0" Click="SearchTagClick"/>
+        <ListView Name="ListViewTag1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, -200, 0"/>
+        <ListView Name="ListViewTag2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, 200, 0"/>
+
+
+
+    </Grid>
+</Page>
