@@ -9,13 +9,19 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <TextBlock Name="TextBlockTag" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 100, 0, 0">EPICTURE</TextBlock>
-        <TextBox Name="TextBoxTag" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 150, 0, 0" PlaceholderText="rentrez un tag" ></TextBox>
-        <TextBox Name="TextBoxNb" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 200, 0, 0" PlaceholderText="nombre de photos" ></TextBox>
-        <Button Name="ButtonTag" Content="Rechercher des photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 250, 0, 0" Click="SearchTagClick"/>
-        <ListView Name="ListViewTag1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, -200, 0"/>
-        <ListView Name="ListViewTag2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, 200, 0"/>
+        <TextBlock Name="TextBlockTag" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 200, 0, 0">EPICTURE</TextBlock>
+        <TextBlock Name="TextBlockWarning" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 100, 0, 0"></TextBlock>
 
+        <TextBox Name="TextBoxTag" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 250, 0, 0" PlaceholderText="rentrez un tag" ></TextBox>
+        <TextBox Name="TextBoxNb" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, 0, 0" PlaceholderText="nombre de photos" ></TextBox>
+        <Button Name="ButtonTag" Content="Rechercher des photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 350, 0, 0" Click="SearchTagClick"/>
+        <Button Name="ButtonSelect" Content="Mettre en favoris" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 400, 0, 0" Click="AddFavorisClick"/>
+        <Button Name="ButtonConnectImgur" Content="Se connecter a Imgur" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 450, 0, 0" Click="ImgurConnectionClick"/>
+
+        <ListView Name="ListViewTag1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 0, -1000, 0"/>
+        <ListView Name="ListViewTag2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 0, 1000, 0" />
+        <TextBox Name="TextBoxFlickr" Width="300px" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 0, 0, 0"  Text="IMGUR" TextAlignment="Right" BorderThickness="0" FontSize="50" Opacity="100" ></TextBox>
+        <TextBox Name="TextBoxImgur" Width="300px" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0, 0, 0, 0" Text="FLICKR" TextAlignment="Left" BorderThickness="0" FontSize="50" Opacity="10"></TextBox>
 
 
     </Grid>
