@@ -1,4 +1,5 @@
-﻿using Imgur.API.Authentication.Impl;
+﻿using Imgur.API;
+using Imgur.API.Authentication.Impl;
 using Imgur.API.Endpoints.Impl;
 using Imgur.API.Enums;
 using Imgur.API.Models;
@@ -6,6 +7,7 @@ using Imgur.API.Models.Impl;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -43,7 +45,7 @@ namespace epicture
             imgur_token = await endpoint.GetTokenByCodeAsync(code);
         }
 
-        async public void callBackURL()
+        async public Task<String> callBackURL()
         {
             string result;
 
@@ -73,8 +75,10 @@ namespace epicture
             {
                 result = ex.Message;
             }
+            return "Vous êtes connecté à Imgur !";
         }
 
+        //ajouter une photo à ses favoris
         public async void addFavorites(string id)
         {
             var values = new Dictionary<string, string>();
@@ -85,24 +89,24 @@ namespace epicture
             var responseString = await response.Content.ReadAsStringAsync();
         }
 
-
-        public async void connection()
+        //connexion à Imgur
+        public async Task<String> connection()
         {
-            callBackURL();
+            return await callBackURL();
         }
 
+        // vérifie si l'utilisateur est connecté
         public bool isConnected()
         {
             return imgur_token != null;
         }
 
+        //renvoie les images associées au tag envoyé
         public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_photos)
         {
             ImageContainer imageContainer = new ImageContainer();
             GalleryEndpoint galleryEndpoint = new GalleryEndpoint(client);
             var galleries = await galleryEndpoint.SearchGalleryAsync(tag);
-
-            ImageEndpoint imageEndpoint = new ImageEndpoint(client);
 
             for (int i = 0; i < nb_photos && i < galleries.Count(); i++)
             {
@@ -115,7 +119,6 @@ namespace epicture
                     if (galleryAlbum.Images.Count() > 0)
                     {
                         imgImgur.Source = new BitmapImage(new Uri(galleryAlbum.Images.ElementAt(0).Link, UriKind.Absolute));
-                        Debug.WriteLine(galleryAlbum.Images.ElementAt(0).Link + " - - - " + galleryAlbum.Images.ElementAt(0).Id);
                         imgImgur.Name = galleryAlbum.Images.ElementAt(0).Id;
                         imageContainer.AddImageSource(imgImgur);
                     }
@@ -123,10 +126,10 @@ namespace epicture
                 else
                     nb_photos++;
             }
-
             return imageContainer;
         }
 
+        //renvoie les images des favoris de l'utilsateur
         public async Task<ImageContainer> createImageContainerFromFavorites()
         {
             ImageContainer imageContainer = new ImageContainer();
@@ -134,44 +137,78 @@ namespace epicture
             var endpoint = new AccountEndpoint(client_fav);
             var favourites = await endpoint.GetAccountFavoritesAsync();
 
-            Debug.WriteLine(favourites.Count());
-
             for (int i = 0; i < favourites.Count(); i++)
             {
-                Debug.WriteLine("I VAUT : " + i);
-
                 if (favourites.ElementAt(i).GetType().ToString() == "Imgur.API.Models.Impl.GalleryImage")
                 {
-                    Debug.WriteLine("Cast image");
                     GalleryImage galleryImage = (GalleryImage)(favourites.ElementAt(i));
-
                     Windows.UI.Xaml.Controls.Image imgImgur = new Windows.UI.Xaml.Controls.Image();
-
                     imgImgur.Source = new BitmapImage(new Uri(galleryImage.Link, UriKind.Absolute));
-                    Debug.WriteLine(galleryImage.Link + " - - - " + galleryImage.Id);
                     imgImgur.Name = galleryImage.Id;
                     imageContainer.AddImageSource(imgImgur);
                 }
                 else if (favourites.ElementAt(i).GetType().ToString() == "Imgur.API.Models.Impl.GalleryAlbum")
                 {
-                    Debug.WriteLine("Cast album");
-
                     GalleryAlbum galleryAlbum = (GalleryAlbum)(favourites.ElementAt(i));
-
                     Windows.UI.Xaml.Controls.Image imgImgur = new Windows.UI.Xaml.Controls.Image();
                     foreach (var image in galleryAlbum.Images)
                     {
                         imgImgur.Source = new BitmapImage(new Uri(image.Link, UriKind.Absolute));
-                        Debug.WriteLine(image.Link + " - - - " + image.Id);
                         imgImgur.Name = image.Id;
                         imageContainer.AddImageSource(imgImgur);
                     }
                 }
             }
 
-            Debug.WriteLine("ON A FINI");
-
             return imageContainer;
+        }
+
+        //renvoie les images postées par l'utilisateur
+        public async Task<ImageContainer> createImageContainerFromPosts()
+        {
+            ImageContainer imageContainer = new ImageContainer();
+            var client_fav = new ImgurClient(client_id, imgur_token);
+            var endpoint = new AccountEndpoint(client_fav);
+            var favourites = await endpoint.GetImagesAsync();
+
+            Debug.WriteLine("-->" + favourites.Count());
+
+            for (int i = 0; i < favourites.Count(); i++)
+            {
+               Imgur.API.Models.Impl.Image galleryImage = (Imgur.API.Models.Impl.Image)(favourites.ElementAt(i));
+               Windows.UI.Xaml.Controls.Image imgImgur = new Windows.UI.Xaml.Controls.Image();
+               imgImgur.Source = new BitmapImage(new Uri(galleryImage.Link, UriKind.Absolute));
+               imgImgur.Name = galleryImage.Id;
+               imageContainer.AddImageSource(imgImgur);
+            }
+            return imageContainer;
+        }
+
+        //poste une image depuis la bibliothèque d'images
+        public async void postImage(string filename)
+        {
+            var client_post = new ImgurClient(client_id, imgur_token);
+            var endpoint_post = new ImageEndpoint(client_post);
+            IImage image = null;
+            await Task.Run(() =>
+            {
+                Task.Yield();
+                using (var fs = new FileStream(@"C:\Users\Léo\Pictures\" + filename, FileMode.Open))
+                {
+                    image = endpoint_post.UploadImageStreamAsync(fs).Result;
+                }
+            });
+            //Debug.Write("Image uploaded. Image Url: " + image.Link);
+            Windows.UI.Xaml.Controls.Image imgImgur2 = new Windows.UI.Xaml.Controls.Image();
+            imgImgur2.Source = new BitmapImage(new Uri(image.Link, UriKind.Absolute));
+            imgImgur2.Name = image.Id;
+        }
+
+        public async void deletePost(string id)
+        {
+            var client = new ImgurClient(client_id, imgur_token);
+            var endpoint = new AccountEndpoint(client);
+            var deleted = await endpoint.DeleteImageAsync(id, "me");
         }
 
     }

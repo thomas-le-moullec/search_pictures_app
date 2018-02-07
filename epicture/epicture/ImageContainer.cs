@@ -20,7 +20,7 @@ namespace epicture
 
         public void AddImageSource(Image img)
         {
-            img.Width = 300;
+            img.Width = 500;
             _images.Add(img);
         }
 

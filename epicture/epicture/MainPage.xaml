@@ -9,21 +9,52 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <TextBlock Name="TextBlockTag" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 200, 0, 0">EPICTURE</TextBlock>
-        <TextBlock Name="TextBlockWarning" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 100, 0, 0"></TextBlock>
+        <Grid Background="#f1f2f6">
 
-        <TextBox Name="TextBoxTag" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 250, 0, 0" PlaceholderText="rentrez un tag" ></TextBox>
-        <TextBox Name="TextBoxNb" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, 0, 0" PlaceholderText="nombre de photos" ></TextBox>
-        <Button Name="ButtonTag" Width="200px" Content="Rechercher des photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 350, 0, 0" Click="SearchTagClick"/>
-        <Button Name="ButtonSelect" Width="200px" Content="Mettre en favoris" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 400, 0, 0" Click="AddFavorisClick"/>
-        <Button Name="ButtonConnectImgur" Width="200px" Content="Se connecter a Imgur" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 450, 0, 0" Click="ImgurConnectionClick"/>
-        <Button Name="ButtonImgurFavorites" Width="200px" Content="Voir ses favoris" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 500, 0, 0" Click="GetFavoritesClick"/>
+            <!--<Image Source="Assets/background.png" HorizontalAlignment="Center" VerticalAlignment="Top" />-->
+            <!--<TextBlock Name="TextBlockTag" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 100, 0, 0">EPICTURE</TextBlock>-->
+            <Image Source="Assets/logo.png" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 100, 0, 0"/>
 
-        <ListView Name="ListViewTag1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 0, -1000, 0"/>
-        <ListView Name="ListViewTag2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 0, 1000, 0" />
-        <TextBox Name="TextBoxFlickr" Width="300px" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 0, 0, 0"  Text="IMGUR" TextAlignment="Right" BorderThickness="0" FontSize="50" Opacity="100" ></TextBox>
-        <TextBox Name="TextBoxImgur" Width="300px" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0, 0, 0, 0" Text="FLICKR" TextAlignment="Left" BorderThickness="0" FontSize="50" Opacity="10"></TextBox>
+            <Image Source="Assets/flickr_button.png" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 25, 1000, 0"/>
+            <Image Source="Assets/imgur_button.png" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1000, 25, 0, 0"/>
 
+
+
+            <TextBlock Name="TextBlockWarning" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 70, 0, 0"></TextBlock>
+
+            <TextBox Name="TextBoxTag" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 200, 0, 0" PlaceholderText="rentrez un tag" ></TextBox>
+            <TextBox Name="TextBoxNb" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 250, 0, 0" PlaceholderText="nombre de photos" ></TextBox>
+
+            <Button Name="ButtonSearchTag" Width="200px" Content="Rechercher des photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 300, 0, 0" Click="SearchTagClick"/>
+            <Button Name="ButtonConnectImgur" Width="200px" Content="Se connecter à Imgur"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 450, 0, 0" Click="Imgur_ConnectionClick" />
+ 
+            <Button Name="ButtonImgurPost" Background="#ff333333" Width="200px" Content="Poster une photo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="250, 500, 0, 0" Click="Imgur_PostClick"/>
+            <TextBox Name="TextBoxPostFile" Width="200px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 500, 250, 0" PlaceholderText="rentrez le nom du fichier" ></TextBox>
+            <Button Name="ButtonImgurGetPost" Background="#ff333333" Width="200px" Content="Voir ses photos" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 550, 0, 0" Click="Imgur_GetPostsClick"/>
+            <Button Name="ButtonImgurDeletePost" Background="#ff333333" Width="200px" Content="Supprimer la photo" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 600, 0, 0" Click="Imgur_DeleteClick"/>
+
+            <Button Name="ButtonImgurGetFavourites" Background="#ff333333" Width="200px" Content="Mettre en favoris" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 650, 0, 0" Click="Imgur_AddFavorisClick"/>
+            <Button Name="ButtonImgurAddFavourites" Background="#ff333333" Width="200px" Content="Voir ses favoris" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 700, 0, 0" Click="Imgur_GetFavoritesClick"/>
+
+            <ListView Name="ListViewTag_Imgur" Canvas.ZIndex="-1"  ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0, 100, 0, 0">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="BorderThickness" Value="5"/>
+                        <Setter Property="Margin" Value="10"/>
+                        <Setter Property="Padding" Value="10"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <ListView Name="ListViewTag_Flickr" Canvas.ZIndex="-1"  ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="0, 100, 0, 0">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="BorderThickness" Value="5"/>
+                        <Setter Property="Margin" Value="10"/>
+                        <Setter Property="Padding" Value="10"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
 
     </Grid>
 </Page>
