@@ -38,8 +38,8 @@ namespace epicture
 
         async public void getToken()
         {
-            var client = new ImgurClient(client_id, client_secret);
-            var endpoint = new OAuth2Endpoint(client);
+            var client_account = new ImgurClient(client_id, client_secret);
+            var endpoint = new OAuth2Endpoint(client_account);
             imgur_token = await endpoint.GetTokenByCodeAsync(code);
         }
 
@@ -127,7 +127,52 @@ namespace epicture
             return imageContainer;
         }
 
-        //public async Task<ImageContainer> creat
+        public async Task<ImageContainer> createImageContainerFromFavorites()
+        {
+            ImageContainer imageContainer = new ImageContainer();
+            var client_fav = new ImgurClient(client_id, imgur_token);
+            var endpoint = new AccountEndpoint(client_fav);
+            var favourites = await endpoint.GetAccountFavoritesAsync();
+
+            Debug.WriteLine(favourites.Count());
+
+            for (int i = 0; i < favourites.Count(); i++)
+            {
+                Debug.WriteLine("I VAUT : " + i);
+
+                if (favourites.ElementAt(i).GetType().ToString() == "Imgur.API.Models.Impl.GalleryImage")
+                {
+                    Debug.WriteLine("Cast image");
+                    GalleryImage galleryImage = (GalleryImage)(favourites.ElementAt(i));
+
+                    Windows.UI.Xaml.Controls.Image imgImgur = new Windows.UI.Xaml.Controls.Image();
+
+                    imgImgur.Source = new BitmapImage(new Uri(galleryImage.Link, UriKind.Absolute));
+                    Debug.WriteLine(galleryImage.Link + " - - - " + galleryImage.Id);
+                    imgImgur.Name = galleryImage.Id;
+                    imageContainer.AddImageSource(imgImgur);
+                }
+                else if (favourites.ElementAt(i).GetType().ToString() == "Imgur.API.Models.Impl.GalleryAlbum")
+                {
+                    Debug.WriteLine("Cast album");
+
+                    GalleryAlbum galleryAlbum = (GalleryAlbum)(favourites.ElementAt(i));
+
+                    Windows.UI.Xaml.Controls.Image imgImgur = new Windows.UI.Xaml.Controls.Image();
+                    foreach (var image in galleryAlbum.Images)
+                    {
+                        imgImgur.Source = new BitmapImage(new Uri(image.Link, UriKind.Absolute));
+                        Debug.WriteLine(image.Link + " - - - " + image.Id);
+                        imgImgur.Name = image.Id;
+                        imageContainer.AddImageSource(imgImgur);
+                    }
+                }
+            }
+
+            Debug.WriteLine("ON A FINI");
+
+            return imageContainer;
+        }
 
     }
 }

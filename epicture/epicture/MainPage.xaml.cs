@@ -55,23 +55,20 @@ namespace epicture
 
             ImageContainer imgContainerFlickr = await flickrApi.createImageContainerFromTag(tag, nb_photos);
             ImageContainer imgContainerImgur = await imgurApi.createImageContainerFromTag(tag, nb_photos);
-
             ListViewTag1.ItemsSource = imgContainerImgur.GetImages();
             ListViewTag2.ItemsSource = imgContainerFlickr.GetImages();
-
-            TextBlock textBlock_flick = new TextBlock();
-            TextBlock textBlock_imgur = new TextBlock();
-
-            textBlock_flick.Margin = new Thickness(100, 0, 0, 0);
-            textBlock_imgur.Margin = new Thickness(0, 0, 100, 0);
-
-            textBlock_flick.Text = "FLICKR";
-            textBlock_imgur.Text = "IMGUR";
-
-            //te
-
-
         }
+
+
+        public async void GetFavoritesClick(object sender, RoutedEventArgs e)
+        {
+            if (imgurApi.isConnected())
+            {
+                ImageContainer imgContainerImgur = await imgurApi.createImageContainerFromFavorites();
+                ListViewTag1.ItemsSource = imgContainerImgur.GetImages();
+            }
+        }
+
 
         public async void AddFavorisClick(object sender, RoutedEventArgs e)
         {
