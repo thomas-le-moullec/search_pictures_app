@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace epicture
 {
-    class ImageContainer
+    public class ImageContainer
     {
 
         List<Image> _images = new List<Image>();
@@ -27,6 +27,11 @@ namespace epicture
         public List<Image> GetImages()
         {
             return _images;
+        }
+
+        public int GetNbImages()
+        {
+            return _images.Count;
         }
     }
 }

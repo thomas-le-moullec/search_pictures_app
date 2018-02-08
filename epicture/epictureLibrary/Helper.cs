@@ -9,9 +9,9 @@ using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
 
-namespace epicture.ApiHelper
+namespace epicture
 {
-    class Helper
+    public class Helper
     {
         private String API_KEY;
         private String API_SECRET;

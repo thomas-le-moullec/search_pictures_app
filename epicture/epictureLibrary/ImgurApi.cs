@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Media.Imaging;
 namespace epicture
 {
 
-    class ImgurApi
+    public class ImgurApi
     {
         ImageEndpoint endpoint;
         string client_id = "48a61c1ae13d63e";
@@ -36,6 +36,15 @@ namespace epicture
             startURI = new System.Uri(startURL);
             client = new ImgurClient(client_id, client_secret);
             endpoint = new ImageEndpoint(client);
+        }
+
+        public string getAccessToken()
+        {
+            return "";
+        }
+
+        public void setAccessToken(string access_token)
+        {
         }
 
         async public void getToken()

@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace epicture
 {
-    class FlickrApi
+    public class FlickrApi
     {
         private const string API_KEY = "ed97463b02210fa18ccfe6a1358267b3";
         private const string API_SECRET = "d6826b8008652f89";
@@ -24,14 +24,14 @@ namespace epicture
         private String SecretToken;
         private String AccessToken;
         private Flickr flickr;
-        private ApiHelper.Helper Helper;
+        private Helper Helper;
 
         public FlickrApi()
         {
             flickr = new Flickr(API_KEY);
             SecretToken = "";
             AccessToken = "";
-            Helper = new ApiHelper.Helper(API_KEY, API_SECRET, API_CALLBACK);
+            Helper = new Helper(API_KEY, API_SECRET, API_CALLBACK);
         }
 
         public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_photos)
