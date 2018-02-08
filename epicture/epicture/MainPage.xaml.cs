@@ -149,12 +149,15 @@ namespace epicture
         public async void Imgur_ConnectionClick(object sender, RoutedEventArgs e)
         {
             setTextBoxWarning(await ImgurApi.connection());
-            ButtonConnectImgur.Background = new SolidColorBrush(Color.FromArgb(255, 50, 50, 50));
-            ButtonImgurAddFavourites.Background = new SolidColorBrush(Color.FromArgb(255, 190, 190, 190));
-            ButtonImgurGetPost.Background = new SolidColorBrush(Color.FromArgb(255, 190, 190, 190));
-            ButtonImgurGetFavourites.Background = new SolidColorBrush(Color.FromArgb(255, 190, 190, 190));
-            ButtonImgurPost.Background = new SolidColorBrush(Color.FromArgb(255, 190, 190, 190));
-            ButtonImgurDeletePost.Background = new SolidColorBrush(Color.FromArgb(255, 190, 190, 190));
+
+            ButtonConnectImgur.Visibility = Visibility.Collapsed;
+
+            TextBoxPostFile.Visibility = Visibility.Visible;
+            ButtonImgurAddFavourites.Visibility = Visibility.Visible;
+            ButtonImgurGetPost.Visibility = Visibility.Visible;
+            ButtonImgurGetFavourites.Visibility = Visibility.Visible;
+            ButtonImgurPost.Visibility = Visibility.Visible;
+            ButtonImgurDeletePost.Visibility = Visibility.Visible;
         }
 
         //IMGUR - modification du message d'informations
