@@ -34,18 +34,18 @@ namespace epicture
             Helper = new ApiHelper.Helper(API_KEY, API_SECRET, API_CALLBACK);
         }
 
-        public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_pages)
+        public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_photos)
         {
 
-            var options = new PhotoSearchOptions { Tags = tag, PerPage = nb_pages, Page = 1 };
+            var options = new PhotoSearchOptions { Tags = tag, PerPage = nb_photos, Page = 1 };
             PhotoCollection photos = await flickr.PhotosSearchAsync(options);
             ImageContainer imageContainer = new ImageContainer();
 
             foreach (Photo photo in photos)
             {
-                //Debug.WriteLine("Photo {0} has title {1}", photo.PhotoId, photo.Title);
                 Image img = new Image();
                 img.Source = new BitmapImage(new Uri(photo.LargeUrl));
+                img.Name = photo.PhotoId;
                 imageContainer.AddImageSource(img);
             }
 
@@ -62,15 +62,15 @@ namespace epicture
             }
             catch (Exception Err)
             {
-                //rootPage.NotifyUser("Error getting data from server." + Err.Message, NotifyType.StatusMessage);
+                Debug.WriteLine(Err.Message);
             }
 
             return null;
         }
 
-        public async void GetPhotos()
+        /*public async void GetPhotos()
         {
-        }
+        }*/
 
         public async void TestLogin()
         {
@@ -178,7 +178,7 @@ namespace epicture
             }
             catch (Exception Error)
             {
-                // Error.
+                Debug.WriteLine(Error.Message);
             }
         }
 
