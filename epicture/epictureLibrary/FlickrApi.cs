@@ -16,6 +16,9 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace epicture
 {
+    /**
+     * FlickrAPI will allow us to interact with Flickr and get pictures and so on...
+     */
     public class FlickrApi
     {
         private const string API_KEY = "ed97463b02210fa18ccfe6a1358267b3";
@@ -34,6 +37,11 @@ namespace epicture
             Helper = new Helper(API_KEY, API_SECRET, API_CALLBACK);
         }
 
+        /**
+        * This method extract images with a certain tag
+        * @param tag the tag's name
+        * @param nb_photos the number of pictures.
+        */
         public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_photos)
         {
 
@@ -53,6 +61,10 @@ namespace epicture
 
         }
 
+        /**
+        * This method execute a asyncronous HTTP Request
+        * @param Url url to request
+        */
         private async Task<string> SendDataAsync(String Url)
         {
             try
@@ -72,6 +84,9 @@ namespace epicture
         {
         }*/
 
+        /**
+        * this method is a test from the authentication
+        */
         public async void TestLogin()
         {
             String FlickrUrl = Helper.QueryTestLogin(AccessToken, SecretToken);
@@ -79,6 +94,11 @@ namespace epicture
             Debug.WriteLine("Login Test Response :"+GetResponse);
         }
 
+        /**
+        * This method extract the value from the Token
+        * @param toFind Pattern to find
+        * @param response String to parse
+        */
         private String ParseToken(String toFind, String response)
         {
             String token = null;
@@ -96,6 +116,11 @@ namespace epicture
             return "";
         }
 
+        /**
+        * Exchange the request token for the access token
+        * @param TokenUri Token Uri wich is the response of the OAuth Request Query
+        * @param TokenSecretTmp Secret Token obtained by Request Token Query
+        */
         private async void ExchangeRequestTokenWithOauthToken(String TokenUri, String TokenSecretTmp)
         {
             //remove call back uri
@@ -131,6 +156,9 @@ namespace epicture
             return new Flickr(API_KEY, API_SECRET);
         }
 
+        /**
+        * Main authentication function
+        */
         public async void Oauth()
         {
             try

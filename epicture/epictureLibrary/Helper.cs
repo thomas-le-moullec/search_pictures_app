@@ -16,7 +16,7 @@ namespace epicture
         private String API_KEY;
         private String API_SECRET;
         private String API_CALLBACK;
-//        private String SecretToken;
+        //private String SecretToken;
         //private String AccessToken;
 
         public Helper(String _apiKey, String _apiSecret, String _apiCallback)
@@ -26,6 +26,9 @@ namespace epicture
             API_CALLBACK = _apiCallback;
         }
 
+        /**
+        * Query to get the access token thanks to secretToken and token verifier
+        */
         public String QueryGetAccessToken(String secretTokenTmp, String oauthToken, String oauthVerifier)
         {
             // Acquiring a request token
@@ -54,6 +57,9 @@ namespace epicture
             return FlickrUrl;
         }
 
+        /**
+        * Query to get the Request token and the token verifier.
+        */
         public String QueryGetOauthUrl(String secretToken)
         {
             // Acquiring a request token
@@ -81,6 +87,9 @@ namespace epicture
             return FlickrUrl;
         }
 
+        /**
+        * Request to test the Authentification.
+        */
         public String QueryTestLogin(String accessToken, String secretToken)
         {
             TimeSpan SinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
@@ -105,6 +114,10 @@ namespace epicture
             FlickrUrl += "?" + SigBaseStringParams + "&oauth_signature=" + Uri.EscapeDataString(Signature);
             return FlickrUrl;
         }
+
+        /**
+        * Web Broker Windows to Authenticate the User with Oauth1 Technology
+        */
         public async Task<WebAuthenticationResult> AuthenticateUser(String oauthToken)
         {
             //Get the user authorize
@@ -119,6 +132,11 @@ namespace epicture
                                                     EndUri);
         }
 
+        /**
+        * Signature of Request to be authorized of doing Request
+        * @param SigBaseString URL To Sign
+        * @param tokenSecret Token Secret to Sign
+        */
         public String SignMeThat(String SigBaseString, String tokenSecret)
         {
             IBuffer KeyMaterial = CryptographicBuffer.ConvertStringToBinary(API_SECRET + "&" + tokenSecret, BinaryStringEncoding.Utf8);

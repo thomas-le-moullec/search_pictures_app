@@ -17,7 +17,9 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace epicture
 {
-
+    /**
+     * ImgurAPI will allow us to interact with Imgur and get pictures and so on...
+     */
     public class ImgurApi
     {
         ImageEndpoint endpoint;
@@ -58,6 +60,9 @@ namespace epicture
             imgur_token = await endpoint.GetTokenByCodeAsync(code);
         }
 
+        /**
+        * This method will redirect the user to the imgur login page thanks to the startURI member. This method will also get the response and parse the code in order to get the access token
+        */
         async public Task<String> callBackURL()
         {
             string result;
@@ -136,6 +141,11 @@ namespace epicture
         }
 
         //renvoie les images associées au tag envoyé
+        /**
+        * This method extract images with a certain tag
+        * @param tag the tag's name
+        * @param nb_photos the number of pictures.
+        */
         public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_photos)
         {
             ImageContainer imageContainer = new ImageContainer();
@@ -188,6 +198,9 @@ namespace epicture
         }
 
         //renvoie les images des favoris de l'utilsateur
+        /**
+         * Return favorite pictures of the user
+         */
         public async Task<ImageContainer> createImageContainerFromFavorites()
         {
             ImageContainer imageContainer = new ImageContainer();
@@ -237,6 +250,9 @@ namespace epicture
         }
 
         //renvoie les images postées par l'utilisateur
+        /**
+         * Return pictures posted from the user
+         */
         public async Task<ImageContainer> createImageContainerFromPosts()
         {
             ImageContainer imageContainer = new ImageContainer();
@@ -256,6 +272,9 @@ namespace epicture
         }
 
         //poste une image depuis la bibliothèque d'images
+        /**
+         * Post a picture
+         */
         public async void postImage(string filename)
         {
             var client_post = new ImgurClient(client_id, imgur_token);
