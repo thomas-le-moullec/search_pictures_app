@@ -1,0 +1,131 @@
+\hypertarget{classepicture_1_1_flickr_api}{}\section{epicture.\+Flickr\+Api Class Reference}
+\label{classepicture_1_1_flickr_api}\index{epicture.\+Flickr\+Api@{epicture.\+Flickr\+Api}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ \mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}} $>$ \mbox{\hyperlink{classepicture_1_1_flickr_api_abd70a1f8fe82ddc219572058be51dd51}{create\+Image\+Container\+From\+Tag}} (string tag, int nb\+\_\+photos)
+\item 
+async void \mbox{\hyperlink{classepicture_1_1_flickr_api_a4e39f3d53b58577718284c284c34338b}{Test\+Login}} ()
+\item 
+async void \mbox{\hyperlink{classepicture_1_1_flickr_api_a148c12d8328b94be08a554a45a546fc1}{Oauth}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a387ed0b89c15b93cce6722bda643b92f}\label{classepicture_1_1_flickr_api_a387ed0b89c15b93cce6722bda643b92f}} 
+static Flickr {\bfseries Get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ string $>$ \mbox{\hyperlink{classepicture_1_1_flickr_api_ae914f2cefba1eb20021af69115471626}{Send\+Data\+Async}} (String Url)
+\item 
+String \mbox{\hyperlink{classepicture_1_1_flickr_api_a9ab15abcbe6c3002eb753dd79aa587ae}{Parse\+Token}} (String to\+Find, String response)
+\item 
+async void \mbox{\hyperlink{classepicture_1_1_flickr_api_af613a836598d8cdccde548b2b4d16c5c}{Exchange\+Request\+Token\+With\+Oauth\+Token}} (String Token\+Uri, String Token\+Secret\+Tmp)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a6f1e1718b8dc79e8857f9ea71879fb75}\label{classepicture_1_1_flickr_api_a6f1e1718b8dc79e8857f9ea71879fb75}} 
+const string {\bfseries A\+P\+I\+\_\+\+K\+EY} = \char`\"{}ed97463b02210fa18ccfe6a1358267b3\char`\"{}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a88b3b145ac8b7cfb264b992c215ccfde}\label{classepicture_1_1_flickr_api_a88b3b145ac8b7cfb264b992c215ccfde}} 
+const string {\bfseries A\+P\+I\+\_\+\+S\+E\+C\+R\+ET} = \char`\"{}d6826b8008652f89\char`\"{}
+\item 
+const string \mbox{\hyperlink{classepicture_1_1_flickr_api_aa2d58a7bd6de20766896ad0b717100bb}{A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK}} = \char`\"{}ms-\/appx-\/web\+://Microsoft.\+A\+A\+D.\+Broker\+Plug\+In/S-\/1-\/15-\/2-\/660250367-\/210907714-\/264770912-\/2147469295-\/3070322386-\/383610947-\/1518229695\char`\"{}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a278659143c782dc0f3d0cd5af4f44513}\label{classepicture_1_1_flickr_api_a278659143c782dc0f3d0cd5af4f44513}} 
+String {\bfseries Secret\+Token}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a0ca06cbf2214c4ba041803f7eafa3317}\label{classepicture_1_1_flickr_api_a0ca06cbf2214c4ba041803f7eafa3317}} 
+String {\bfseries Access\+Token}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a241660e21ea428b33ff3c6157eeb3ed9}\label{classepicture_1_1_flickr_api_a241660e21ea428b33ff3c6157eeb3ed9}} 
+Flickr {\bfseries flickr}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a2ab99ed8b12c50cd07de3bec64eadc74}\label{classepicture_1_1_flickr_api_a2ab99ed8b12c50cd07de3bec64eadc74}} 
+\mbox{\hyperlink{classepicture_1_1_helper}{Helper}} {\bfseries Helper}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Flickr\+A\+PI will allow us to interact with Flickr and get pictures and so on... 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_abd70a1f8fe82ddc219572058be51dd51}\label{classepicture_1_1_flickr_api_abd70a1f8fe82ddc219572058be51dd51}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!create\+Image\+Container\+From\+Tag@{create\+Image\+Container\+From\+Tag}}
+\index{create\+Image\+Container\+From\+Tag@{create\+Image\+Container\+From\+Tag}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{create\+Image\+Container\+From\+Tag()}{createImageContainerFromTag()}}
+{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}}$>$ epicture.\+Flickr\+Api.\+create\+Image\+Container\+From\+Tag (\begin{DoxyParamCaption}\item[{string}]{tag,  }\item[{int}]{nb\+\_\+photos }\end{DoxyParamCaption})}
+
+This method extract images with a certain tag 
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag\textquotesingle{}s name \\
+\hline
+{\em nb\+\_\+photos} & the number of pictures. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_af613a836598d8cdccde548b2b4d16c5c}\label{classepicture_1_1_flickr_api_af613a836598d8cdccde548b2b4d16c5c}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!Exchange\+Request\+Token\+With\+Oauth\+Token@{Exchange\+Request\+Token\+With\+Oauth\+Token}}
+\index{Exchange\+Request\+Token\+With\+Oauth\+Token@{Exchange\+Request\+Token\+With\+Oauth\+Token}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{Exchange\+Request\+Token\+With\+Oauth\+Token()}{ExchangeRequestTokenWithOauthToken()}}
+{\footnotesize\ttfamily async void epicture.\+Flickr\+Api.\+Exchange\+Request\+Token\+With\+Oauth\+Token (\begin{DoxyParamCaption}\item[{String}]{Token\+Uri,  }\item[{String}]{Token\+Secret\+Tmp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Exchange the request token for the access token 
+\begin{DoxyParams}{Parameters}
+{\em Token\+Uri} & Token Uri wich is the response of the O\+Auth Request Query \\
+\hline
+{\em Token\+Secret\+Tmp} & Secret Token obtained by Request Token Query \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a148c12d8328b94be08a554a45a546fc1}\label{classepicture_1_1_flickr_api_a148c12d8328b94be08a554a45a546fc1}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!Oauth@{Oauth}}
+\index{Oauth@{Oauth}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{Oauth()}{Oauth()}}
+{\footnotesize\ttfamily async void epicture.\+Flickr\+Api.\+Oauth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main authentication function \mbox{\Hypertarget{classepicture_1_1_flickr_api_a9ab15abcbe6c3002eb753dd79aa587ae}\label{classepicture_1_1_flickr_api_a9ab15abcbe6c3002eb753dd79aa587ae}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!Parse\+Token@{Parse\+Token}}
+\index{Parse\+Token@{Parse\+Token}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{Parse\+Token()}{ParseToken()}}
+{\footnotesize\ttfamily String epicture.\+Flickr\+Api.\+Parse\+Token (\begin{DoxyParamCaption}\item[{String}]{to\+Find,  }\item[{String}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This method extract the value from the Token 
+\begin{DoxyParams}{Parameters}
+{\em to\+Find} & Pattern to find \\
+\hline
+{\em response} & String to parse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_ae914f2cefba1eb20021af69115471626}\label{classepicture_1_1_flickr_api_ae914f2cefba1eb20021af69115471626}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!Send\+Data\+Async@{Send\+Data\+Async}}
+\index{Send\+Data\+Async@{Send\+Data\+Async}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{Send\+Data\+Async()}{SendDataAsync()}}
+{\footnotesize\ttfamily async Task$<$string$>$ epicture.\+Flickr\+Api.\+Send\+Data\+Async (\begin{DoxyParamCaption}\item[{String}]{Url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This method execute a asyncronous H\+T\+TP Request 
+\begin{DoxyParams}{Parameters}
+{\em Url} & url to request \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_a4e39f3d53b58577718284c284c34338b}\label{classepicture_1_1_flickr_api_a4e39f3d53b58577718284c284c34338b}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!Test\+Login@{Test\+Login}}
+\index{Test\+Login@{Test\+Login}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{Test\+Login()}{TestLogin()}}
+{\footnotesize\ttfamily async void epicture.\+Flickr\+Api.\+Test\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+this method is a test from the authentication 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classepicture_1_1_flickr_api_aa2d58a7bd6de20766896ad0b717100bb}\label{classepicture_1_1_flickr_api_aa2d58a7bd6de20766896ad0b717100bb}} 
+\index{epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}!A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK@{A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}
+\index{A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK@{A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK}!epicture\+::\+Flickr\+Api@{epicture\+::\+Flickr\+Api}}
+\subsubsection{\texorpdfstring{A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK}{API\_CALLBACK}}
+{\footnotesize\ttfamily const string epicture.\+Flickr\+Api.\+A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK = \char`\"{}ms-\/appx-\/web\+://Microsoft.\+A\+A\+D.\+Broker\+Plug\+In/S-\/1-\/15-\/2-\/660250367-\/210907714-\/264770912-\/2147469295-\/3070322386-\/383610947-\/1518229695\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+The callback U\+RL to redirect the user back to the program 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+epicture/epicture\+Library/Flickr\+Api.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\hypertarget{classepicture_1_1_imgur_api}{}\section{epicture.\+Imgur\+Api Class Reference}
+\label{classepicture_1_1_imgur_api}\index{epicture.\+Imgur\+Api@{epicture.\+Imgur\+Api}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a7d14cc12e95904ccb278443ce30d70b9}\label{classepicture_1_1_imgur_api_a7d14cc12e95904ccb278443ce30d70b9}} 
+string {\bfseries get\+Access\+Token} ()
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a4e6484b3040b1519dc6bbc721e2e074f}\label{classepicture_1_1_imgur_api_a4e6484b3040b1519dc6bbc721e2e074f}} 
+void {\bfseries set\+Access\+Token} (string access\+\_\+token)
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_ad8ebbd689e638e24f11cd763658640fe}\label{classepicture_1_1_imgur_api_ad8ebbd689e638e24f11cd763658640fe}} 
+async void {\bfseries get\+Token} ()
+\item 
+async Task$<$ String $>$ \mbox{\hyperlink{classepicture_1_1_imgur_api_a3ddaf3c09b2d5edf39ace0f2390f78a9}{call\+Back\+U\+RL}} ()
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_aebdd7484625ef704946e3966933db563}\label{classepicture_1_1_imgur_api_aebdd7484625ef704946e3966933db563}} 
+async void {\bfseries add\+Favorites} (string id)
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_af0cb0b13ba443097dbde0980267b9b20}\label{classepicture_1_1_imgur_api_af0cb0b13ba443097dbde0980267b9b20}} 
+async Task$<$ String $>$ {\bfseries connection} ()
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_affe36b9f3403dfbfdfbdea7811c54453}\label{classepicture_1_1_imgur_api_affe36b9f3403dfbfdfbdea7811c54453}} 
+bool {\bfseries is\+Connected} ()
+\item 
+async Task$<$ \mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}} $>$ \mbox{\hyperlink{classepicture_1_1_imgur_api_ac4db02936c30dfc87f1b5557f7a7af75}{create\+Image\+Container\+From\+Tag}} (string tag, int nb\+\_\+photos)
+\item 
+async Task$<$ \mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}} $>$ \mbox{\hyperlink{classepicture_1_1_imgur_api_a105393adc1ac69c9be3fbd9c020c1b57}{create\+Image\+Container\+From\+Favorites}} ()
+\item 
+async Task$<$ \mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}} $>$ \mbox{\hyperlink{classepicture_1_1_imgur_api_a7d7e217e9bbe707827de3f3222245ba8}{create\+Image\+Container\+From\+Posts}} ()
+\item 
+async void \mbox{\hyperlink{classepicture_1_1_imgur_api_a9f5cec5e327a823db214ff4d4738197a}{post\+Image}} (string filename)
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_aeb84a9fc83ef5d634a9196654384eb5b}\label{classepicture_1_1_imgur_api_aeb84a9fc83ef5d634a9196654384eb5b}} 
+async void {\bfseries delete\+Post} (string id)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_abef6924a5498e830d010efeb123f6f47}\label{classepicture_1_1_imgur_api_abef6924a5498e830d010efeb123f6f47}} 
+Image\+Endpoint {\bfseries endpoint}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a586a3f3f53f1756ae50c9e93510a8bce}\label{classepicture_1_1_imgur_api_a586a3f3f53f1756ae50c9e93510a8bce}} 
+string {\bfseries client\+\_\+id} = \char`\"{}48a61c1ae13d63e\char`\"{}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_ab60d5532ab41ea9bde7a969b5c3fd2dd}\label{classepicture_1_1_imgur_api_ab60d5532ab41ea9bde7a969b5c3fd2dd}} 
+string {\bfseries client\+\_\+secret} = \char`\"{}b13698625f471abb649bafe54182f9072017fc45\char`\"{}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_af02533519ecbc6ae360cba70b018ad7c}\label{classepicture_1_1_imgur_api_af02533519ecbc6ae360cba70b018ad7c}} 
+Imgur\+Client {\bfseries client}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a3b33cd29b24711a06741aaf8f6ba36a2}\label{classepicture_1_1_imgur_api_a3b33cd29b24711a06741aaf8f6ba36a2}} 
+Imgur.\+A\+P\+I.\+Models.\+I\+O\+Auth2\+Token {\bfseries imgur\+\_\+token} = null
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_ae758696dd1bb39b19c4b58600eb5bc5c}\label{classepicture_1_1_imgur_api_ae758696dd1bb39b19c4b58600eb5bc5c}} 
+string {\bfseries code}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a5362931aa20d3188facc9a043c376efe}\label{classepicture_1_1_imgur_api_a5362931aa20d3188facc9a043c376efe}} 
+System.\+Uri {\bfseries start\+U\+RI}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a6cfcc3b9ccb8501f08d54a8def210520}\label{classepicture_1_1_imgur_api_a6cfcc3b9ccb8501f08d54a8def210520}} 
+static readonly Http\+Client {\bfseries client\+\_\+http} = new Http\+Client()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Imgur\+A\+PI will allow us to interact with Imgur and get pictures and so on... 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a3ddaf3c09b2d5edf39ace0f2390f78a9}\label{classepicture_1_1_imgur_api_a3ddaf3c09b2d5edf39ace0f2390f78a9}} 
+\index{epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}!call\+Back\+U\+RL@{call\+Back\+U\+RL}}
+\index{call\+Back\+U\+RL@{call\+Back\+U\+RL}!epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}}
+\subsubsection{\texorpdfstring{call\+Back\+U\+R\+L()}{callBackURL()}}
+{\footnotesize\ttfamily async Task$<$String$>$ epicture.\+Imgur\+Api.\+call\+Back\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method will redirect the user to the imgur login page thanks to the start\+U\+RI member. This method will also get the response and parse the code in order to get the access token \mbox{\Hypertarget{classepicture_1_1_imgur_api_a105393adc1ac69c9be3fbd9c020c1b57}\label{classepicture_1_1_imgur_api_a105393adc1ac69c9be3fbd9c020c1b57}} 
+\index{epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}!create\+Image\+Container\+From\+Favorites@{create\+Image\+Container\+From\+Favorites}}
+\index{create\+Image\+Container\+From\+Favorites@{create\+Image\+Container\+From\+Favorites}!epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}}
+\subsubsection{\texorpdfstring{create\+Image\+Container\+From\+Favorites()}{createImageContainerFromFavorites()}}
+{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}}$>$ epicture.\+Imgur\+Api.\+create\+Image\+Container\+From\+Favorites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return favorite pictures of the user \mbox{\Hypertarget{classepicture_1_1_imgur_api_a7d7e217e9bbe707827de3f3222245ba8}\label{classepicture_1_1_imgur_api_a7d7e217e9bbe707827de3f3222245ba8}} 
+\index{epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}!create\+Image\+Container\+From\+Posts@{create\+Image\+Container\+From\+Posts}}
+\index{create\+Image\+Container\+From\+Posts@{create\+Image\+Container\+From\+Posts}!epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}}
+\subsubsection{\texorpdfstring{create\+Image\+Container\+From\+Posts()}{createImageContainerFromPosts()}}
+{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}}$>$ epicture.\+Imgur\+Api.\+create\+Image\+Container\+From\+Posts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return pictures posted from the user \mbox{\Hypertarget{classepicture_1_1_imgur_api_ac4db02936c30dfc87f1b5557f7a7af75}\label{classepicture_1_1_imgur_api_ac4db02936c30dfc87f1b5557f7a7af75}} 
+\index{epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}!create\+Image\+Container\+From\+Tag@{create\+Image\+Container\+From\+Tag}}
+\index{create\+Image\+Container\+From\+Tag@{create\+Image\+Container\+From\+Tag}!epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}}
+\subsubsection{\texorpdfstring{create\+Image\+Container\+From\+Tag()}{createImageContainerFromTag()}}
+{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{classepicture_1_1_image_container}{Image\+Container}}$>$ epicture.\+Imgur\+Api.\+create\+Image\+Container\+From\+Tag (\begin{DoxyParamCaption}\item[{string}]{tag,  }\item[{int}]{nb\+\_\+photos }\end{DoxyParamCaption})}
+
+This method extract images with a certain tag 
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag\textquotesingle{}s name \\
+\hline
+{\em nb\+\_\+photos} & the number of pictures. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_imgur_api_a9f5cec5e327a823db214ff4d4738197a}\label{classepicture_1_1_imgur_api_a9f5cec5e327a823db214ff4d4738197a}} 
+\index{epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}!post\+Image@{post\+Image}}
+\index{post\+Image@{post\+Image}!epicture\+::\+Imgur\+Api@{epicture\+::\+Imgur\+Api}}
+\subsubsection{\texorpdfstring{post\+Image()}{postImage()}}
+{\footnotesize\ttfamily async void epicture.\+Imgur\+Api.\+post\+Image (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+Post a picture 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+epicture/epicture\+Library/Imgur\+Api.\+cs\end{DoxyCompactItemize}

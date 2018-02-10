@@ -1,0 +1,164 @@
+\hypertarget{classepicture_1_1_app}{}\section{epicture.\+App Class Reference}
+\label{classepicture_1_1_app}\index{epicture.\+App@{epicture.\+App}}
+
+
+Fournit un comportement spécifique à l\textquotesingle{}application afin de compléter la classe Application par défaut.  
+
+
+Inheritance diagram for epicture.\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.842105cm]{classepicture_1_1_app}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classepicture_1_1_app_ac385b968cfe8c5cbb76009b068cd5009}{App}} ()
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}objet d\textquotesingle{}application de singleton. Il s\textquotesingle{}agit de la première ligne du code créé à être exécutée. Elle correspond donc à l\textquotesingle{}équivalent logique de main() ou Win\+Main(). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classepicture_1_1_app_ab502a2fb60a201127ee980272694fa2c}{Initialize\+Component}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classepicture_1_1_app_ab502a2fb60a201127ee980272694fa2c}{Initialize\+Component()}} \end{DoxyCompactList}\item 
+global\+::\+Windows.\+U\+I.\+Xaml.\+Markup.\+I\+Xaml\+Type \mbox{\hyperlink{classepicture_1_1_app_ad07aa9948de2fe3ccf94fc72747f6fe8}{Get\+Xaml\+Type}} (global\+::\+System.\+Type type)
+\begin{DoxyCompactList}\small\item\em Get\+Xaml\+Type(\+Type) \end{DoxyCompactList}\item 
+global\+::\+Windows.\+U\+I.\+Xaml.\+Markup.\+I\+Xaml\+Type \mbox{\hyperlink{classepicture_1_1_app_a5d41e2aede9485b8010a8c707be7d434}{Get\+Xaml\+Type}} (string full\+Name)
+\begin{DoxyCompactList}\small\item\em Get\+Xaml\+Type(\+String) \end{DoxyCompactList}\item 
+global\+::\+Windows.\+U\+I.\+Xaml.\+Markup.\+Xmlns\+Definition \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classepicture_1_1_app_a2e22f01b876b3511e2dbc9241ab1a2cc}{Get\+Xmlns\+Definitions}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classepicture_1_1_app_a2e22f01b876b3511e2dbc9241ab1a2cc}{Get\+Xmlns\+Definitions()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{classepicture_1_1_app_a588834872f8c75103ef6b5ccb117e6fb}{On\+Launched}} (Launch\+Activated\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Invoqué lorsque l\textquotesingle{}application est lancée normalement par l\textquotesingle{}utilisateur final. D\textquotesingle{}autres points d\textquotesingle{}entrée seront utilisés par exemple au moment du lancement de l\textquotesingle{}application pour l\textquotesingle{}ouverture d\textquotesingle{}un fichier spécifique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classepicture_1_1_app_a9878a4687b9b9dc2e7d24cd2501fd2c3}{On\+Navigation\+Failed}} (object sender, Navigation\+Failed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Appelé lorsque la navigation vers une page donnée échoue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classepicture_1_1_app_afc42747b09fad5af9daba6e0121ced9a}{On\+Suspending}} (object sender, Suspending\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Appelé lorsque l\textquotesingle{}exécution de l\textquotesingle{}application est suspendue. L\textquotesingle{}état de l\textquotesingle{}application est enregistré sans savoir si l\textquotesingle{}application pourra se fermer ou reprendre sans endommager le contenu de la mémoire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_app_aef10db95121bd3a4a1c55676e8a522ad}\label{classepicture_1_1_app_aef10db95121bd3a4a1c55676e8a522ad}} 
+bool {\bfseries \+\_\+content\+Loaded}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_app_a8e79716acf270b1061eb1e47cb452044}\label{classepicture_1_1_app_a8e79716acf270b1061eb1e47cb452044}} 
+global\+::epicture.\+epicture\+\_\+\+Xaml\+Type\+Info.\+Xaml\+Type\+Info\+Provider {\bfseries \+\_\+provider}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fournit un comportement spécifique à l\textquotesingle{}application afin de compléter la classe Application par défaut. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classepicture_1_1_app_ac385b968cfe8c5cbb76009b068cd5009}\label{classepicture_1_1_app_ac385b968cfe8c5cbb76009b068cd5009}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!App@{App}}
+\index{App@{App}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily epicture.\+App.\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}objet d\textquotesingle{}application de singleton. Il s\textquotesingle{}agit de la première ligne du code créé à être exécutée. Elle correspond donc à l\textquotesingle{}équivalent logique de main() ou Win\+Main(). 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classepicture_1_1_app_ad07aa9948de2fe3ccf94fc72747f6fe8}\label{classepicture_1_1_app_ad07aa9948de2fe3ccf94fc72747f6fe8}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!Get\+Xaml\+Type@{Get\+Xaml\+Type}}
+\index{Get\+Xaml\+Type@{Get\+Xaml\+Type}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{Get\+Xaml\+Type()}{GetXamlType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily global.\+Windows.\+U\+I.\+Xaml.\+Markup.\+I\+Xaml\+Type epicture.\+App.\+Get\+Xaml\+Type (\begin{DoxyParamCaption}\item[{global\+::\+System.\+Type}]{type }\end{DoxyParamCaption})}
+
+
+
+Get\+Xaml\+Type(\+Type) 
+
+\mbox{\Hypertarget{classepicture_1_1_app_a5d41e2aede9485b8010a8c707be7d434}\label{classepicture_1_1_app_a5d41e2aede9485b8010a8c707be7d434}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!Get\+Xaml\+Type@{Get\+Xaml\+Type}}
+\index{Get\+Xaml\+Type@{Get\+Xaml\+Type}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{Get\+Xaml\+Type()}{GetXamlType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily global.\+Windows.\+U\+I.\+Xaml.\+Markup.\+I\+Xaml\+Type epicture.\+App.\+Get\+Xaml\+Type (\begin{DoxyParamCaption}\item[{string}]{full\+Name }\end{DoxyParamCaption})}
+
+
+
+Get\+Xaml\+Type(\+String) 
+
+\mbox{\Hypertarget{classepicture_1_1_app_a2e22f01b876b3511e2dbc9241ab1a2cc}\label{classepicture_1_1_app_a2e22f01b876b3511e2dbc9241ab1a2cc}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!Get\+Xmlns\+Definitions@{Get\+Xmlns\+Definitions}}
+\index{Get\+Xmlns\+Definitions@{Get\+Xmlns\+Definitions}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{Get\+Xmlns\+Definitions()}{GetXmlnsDefinitions()}}
+{\footnotesize\ttfamily global.\+Windows.\+U\+I.\+Xaml.\+Markup.\+Xmlns\+Definition \mbox{[}$\,$\mbox{]} epicture.\+App.\+Get\+Xmlns\+Definitions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classepicture_1_1_app_a2e22f01b876b3511e2dbc9241ab1a2cc}{Get\+Xmlns\+Definitions()}} 
+
+\mbox{\Hypertarget{classepicture_1_1_app_ab502a2fb60a201127ee980272694fa2c}\label{classepicture_1_1_app_ab502a2fb60a201127ee980272694fa2c}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!Initialize\+Component@{Initialize\+Component}}
+\index{Initialize\+Component@{Initialize\+Component}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{Initialize\+Component()}{InitializeComponent()}}
+{\footnotesize\ttfamily void epicture.\+App.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classepicture_1_1_app_ab502a2fb60a201127ee980272694fa2c}{Initialize\+Component()}} 
+
+\mbox{\Hypertarget{classepicture_1_1_app_a588834872f8c75103ef6b5ccb117e6fb}\label{classepicture_1_1_app_a588834872f8c75103ef6b5ccb117e6fb}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!On\+Launched@{On\+Launched}}
+\index{On\+Launched@{On\+Launched}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{On\+Launched()}{OnLaunched()}}
+{\footnotesize\ttfamily override void epicture.\+App.\+On\+Launched (\begin{DoxyParamCaption}\item[{Launch\+Activated\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Invoqué lorsque l\textquotesingle{}application est lancée normalement par l\textquotesingle{}utilisateur final. D\textquotesingle{}autres points d\textquotesingle{}entrée seront utilisés par exemple au moment du lancement de l\textquotesingle{}application pour l\textquotesingle{}ouverture d\textquotesingle{}un fichier spécifique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Détails concernant la requête et le processus de lancement.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_app_a9878a4687b9b9dc2e7d24cd2501fd2c3}\label{classepicture_1_1_app_a9878a4687b9b9dc2e7d24cd2501fd2c3}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!On\+Navigation\+Failed@{On\+Navigation\+Failed}}
+\index{On\+Navigation\+Failed@{On\+Navigation\+Failed}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{On\+Navigation\+Failed()}{OnNavigationFailed()}}
+{\footnotesize\ttfamily void epicture.\+App.\+On\+Navigation\+Failed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Navigation\+Failed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appelé lorsque la navigation vers une page donnée échoue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Frame à l\textquotesingle{}origine de l\textquotesingle{}échec de navigation.\\
+\hline
+{\em e} & Détails relatifs à l\textquotesingle{}échec de navigation\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classepicture_1_1_app_afc42747b09fad5af9daba6e0121ced9a}\label{classepicture_1_1_app_afc42747b09fad5af9daba6e0121ced9a}} 
+\index{epicture\+::\+App@{epicture\+::\+App}!On\+Suspending@{On\+Suspending}}
+\index{On\+Suspending@{On\+Suspending}!epicture\+::\+App@{epicture\+::\+App}}
+\subsubsection{\texorpdfstring{On\+Suspending()}{OnSuspending()}}
+{\footnotesize\ttfamily void epicture.\+App.\+On\+Suspending (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Suspending\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Appelé lorsque l\textquotesingle{}exécution de l\textquotesingle{}application est suspendue. L\textquotesingle{}état de l\textquotesingle{}application est enregistré sans savoir si l\textquotesingle{}application pourra se fermer ou reprendre sans endommager le contenu de la mémoire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source de la requête de suspension.\\
+\hline
+{\em e} & Détails de la requête de suspension.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+epicture/epicture/App.\+xaml.\+cs\item 
+epicture/epicture/obj/x86/\+Debug/App.\+g.\+i.\+cs\item 
+epicture/epicture/obj/x86/\+Debug/Xaml\+Type\+Info.\+g.\+cs\end{DoxyCompactItemize}

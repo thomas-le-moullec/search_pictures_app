@@ -12,6 +12,7 @@ namespace epictureTest
     [TestClass]
     public class ImgurApiTest
     {
+
         [TestMethod]
         public async Task getImageCountTest()
         {
@@ -41,7 +42,7 @@ namespace epictureTest
             Assert.AreNotEqual(0, count);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public async Task PostTest()
         {
             ImgurApi imgur_api = new ImgurApi();
@@ -50,6 +51,6 @@ namespace epictureTest
             //await imgur_api.postImage("Capture.png");
             int count_final = await imgur_api.GetPostCount();
             Assert.AreEqual(count, count_final);
-        }
+        }*/
     }
 }

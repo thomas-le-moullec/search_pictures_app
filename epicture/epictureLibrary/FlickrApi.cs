@@ -24,14 +24,14 @@ namespace epicture
         private String SecretToken;
         private String AccessToken;
         private Flickr flickr;
-        private Helper Helper;
+        private FlickrHelper Helper;
 
         public FlickrApi()
         {
             flickr = new Flickr(API_KEY);
             SecretToken = "";
             AccessToken = "";
-            Helper = new Helper(API_KEY, API_SECRET, API_CALLBACK);
+            Helper = new FlickrHelper(API_KEY, API_SECRET, API_CALLBACK);
         }
 
         public async Task<ImageContainer> createImageContainerFromTag(string tag, int nb_photos)
