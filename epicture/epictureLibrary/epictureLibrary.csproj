@@ -107,7 +107,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FlickrApi.cs" />
-    <Compile Include="Helper.cs" />
+    <Compile Include="FlickrHelper.cs" />
     <Compile Include="ImageContainer.cs" />
     <Compile Include="ImgurApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

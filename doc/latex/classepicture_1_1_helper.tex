@@ -1,0 +1,75 @@
+\hypertarget{classepicture_1_1_helper}{}\section{epicture.\+Helper Class Reference}
+\label{classepicture_1_1_helper}\index{epicture.\+Helper@{epicture.\+Helper}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_helper_a97c8f872400d13dcf35f79d07c5d6c18}\label{classepicture_1_1_helper_a97c8f872400d13dcf35f79d07c5d6c18}} 
+{\bfseries Helper} (String \+\_\+api\+Key, String \+\_\+api\+Secret, String \+\_\+api\+Callback)
+\item 
+String \mbox{\hyperlink{classepicture_1_1_helper_a82fe7fbebbb5cee5e7787d5f7062bb5f}{Query\+Get\+Access\+Token}} (String secret\+Token\+Tmp, String oauth\+Token, String oauth\+Verifier)
+\item 
+String \mbox{\hyperlink{classepicture_1_1_helper_a9a42fa4d53acaed05f4985c8b2804417}{Query\+Get\+Oauth\+Url}} (String secret\+Token)
+\item 
+String \mbox{\hyperlink{classepicture_1_1_helper_ab01acef7d30c0270753f5deb838b993e}{Query\+Test\+Login}} (String access\+Token, String secret\+Token)
+\item 
+async Task$<$ Web\+Authentication\+Result $>$ \mbox{\hyperlink{classepicture_1_1_helper_af18b551f1629ecc0e6d8cacf1e9a4770}{Authenticate\+User}} (String oauth\+Token)
+\item 
+String \mbox{\hyperlink{classepicture_1_1_helper_a4ef537048b54f85c7f3e1a4c400e0b10}{Sign\+Me\+That}} (String Sig\+Base\+String, String token\+Secret)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_helper_ac8fe9d1a7744bff69020ed3b1f654490}\label{classepicture_1_1_helper_ac8fe9d1a7744bff69020ed3b1f654490}} 
+String {\bfseries A\+P\+I\+\_\+\+K\+EY}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_helper_a9ba3a50bd3aed5c6b420bcda4a8b8d60}\label{classepicture_1_1_helper_a9ba3a50bd3aed5c6b420bcda4a8b8d60}} 
+String {\bfseries A\+P\+I\+\_\+\+S\+E\+C\+R\+ET}
+\item 
+\mbox{\Hypertarget{classepicture_1_1_helper_acb2a04675547389a46a2b5877b7eefb7}\label{classepicture_1_1_helper_acb2a04675547389a46a2b5877b7eefb7}} 
+String {\bfseries A\+P\+I\+\_\+\+C\+A\+L\+L\+B\+A\+CK}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classepicture_1_1_helper_af18b551f1629ecc0e6d8cacf1e9a4770}\label{classepicture_1_1_helper_af18b551f1629ecc0e6d8cacf1e9a4770}} 
+\index{epicture\+::\+Helper@{epicture\+::\+Helper}!Authenticate\+User@{Authenticate\+User}}
+\index{Authenticate\+User@{Authenticate\+User}!epicture\+::\+Helper@{epicture\+::\+Helper}}
+\subsubsection{\texorpdfstring{Authenticate\+User()}{AuthenticateUser()}}
+{\footnotesize\ttfamily async Task$<$Web\+Authentication\+Result$>$ epicture.\+Helper.\+Authenticate\+User (\begin{DoxyParamCaption}\item[{String}]{oauth\+Token }\end{DoxyParamCaption})}
+
+Web Broker Windows to Authenticate the User with Oauth1 Technology \mbox{\Hypertarget{classepicture_1_1_helper_a82fe7fbebbb5cee5e7787d5f7062bb5f}\label{classepicture_1_1_helper_a82fe7fbebbb5cee5e7787d5f7062bb5f}} 
+\index{epicture\+::\+Helper@{epicture\+::\+Helper}!Query\+Get\+Access\+Token@{Query\+Get\+Access\+Token}}
+\index{Query\+Get\+Access\+Token@{Query\+Get\+Access\+Token}!epicture\+::\+Helper@{epicture\+::\+Helper}}
+\subsubsection{\texorpdfstring{Query\+Get\+Access\+Token()}{QueryGetAccessToken()}}
+{\footnotesize\ttfamily String epicture.\+Helper.\+Query\+Get\+Access\+Token (\begin{DoxyParamCaption}\item[{String}]{secret\+Token\+Tmp,  }\item[{String}]{oauth\+Token,  }\item[{String}]{oauth\+Verifier }\end{DoxyParamCaption})}
+
+Query to get the access token thanks to secret\+Token and token verifier \mbox{\Hypertarget{classepicture_1_1_helper_a9a42fa4d53acaed05f4985c8b2804417}\label{classepicture_1_1_helper_a9a42fa4d53acaed05f4985c8b2804417}} 
+\index{epicture\+::\+Helper@{epicture\+::\+Helper}!Query\+Get\+Oauth\+Url@{Query\+Get\+Oauth\+Url}}
+\index{Query\+Get\+Oauth\+Url@{Query\+Get\+Oauth\+Url}!epicture\+::\+Helper@{epicture\+::\+Helper}}
+\subsubsection{\texorpdfstring{Query\+Get\+Oauth\+Url()}{QueryGetOauthUrl()}}
+{\footnotesize\ttfamily String epicture.\+Helper.\+Query\+Get\+Oauth\+Url (\begin{DoxyParamCaption}\item[{String}]{secret\+Token }\end{DoxyParamCaption})}
+
+Query to get the Request token and the token verifier. \mbox{\Hypertarget{classepicture_1_1_helper_ab01acef7d30c0270753f5deb838b993e}\label{classepicture_1_1_helper_ab01acef7d30c0270753f5deb838b993e}} 
+\index{epicture\+::\+Helper@{epicture\+::\+Helper}!Query\+Test\+Login@{Query\+Test\+Login}}
+\index{Query\+Test\+Login@{Query\+Test\+Login}!epicture\+::\+Helper@{epicture\+::\+Helper}}
+\subsubsection{\texorpdfstring{Query\+Test\+Login()}{QueryTestLogin()}}
+{\footnotesize\ttfamily String epicture.\+Helper.\+Query\+Test\+Login (\begin{DoxyParamCaption}\item[{String}]{access\+Token,  }\item[{String}]{secret\+Token }\end{DoxyParamCaption})}
+
+Request to test the Authentification. \mbox{\Hypertarget{classepicture_1_1_helper_a4ef537048b54f85c7f3e1a4c400e0b10}\label{classepicture_1_1_helper_a4ef537048b54f85c7f3e1a4c400e0b10}} 
+\index{epicture\+::\+Helper@{epicture\+::\+Helper}!Sign\+Me\+That@{Sign\+Me\+That}}
+\index{Sign\+Me\+That@{Sign\+Me\+That}!epicture\+::\+Helper@{epicture\+::\+Helper}}
+\subsubsection{\texorpdfstring{Sign\+Me\+That()}{SignMeThat()}}
+{\footnotesize\ttfamily String epicture.\+Helper.\+Sign\+Me\+That (\begin{DoxyParamCaption}\item[{String}]{Sig\+Base\+String,  }\item[{String}]{token\+Secret }\end{DoxyParamCaption})}
+
+Signature of Request to be authorized of doing Request 
+\begin{DoxyParams}{Parameters}
+{\em Sig\+Base\+String} & U\+RL To Sign \\
+\hline
+{\em token\+Secret} & Token Secret to Sign \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+epicture/epicture\+Library/Helper.\+cs\end{DoxyCompactItemize}

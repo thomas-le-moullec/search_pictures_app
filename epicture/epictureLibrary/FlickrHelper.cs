@@ -11,7 +11,7 @@ using Windows.Storage.Streams;
 
 namespace epicture
 {
-    public class Helper
+    public class FlickrHelper
     {
         private String API_KEY;
         private String API_SECRET;
@@ -19,7 +19,7 @@ namespace epicture
         //private String SecretToken;
         //private String AccessToken;
 
-        public Helper(String _apiKey, String _apiSecret, String _apiCallback)
+        public FlickrHelper(String _apiKey, String _apiSecret, String _apiCallback)
         {
             API_KEY = _apiKey;
             API_SECRET = _apiSecret;
